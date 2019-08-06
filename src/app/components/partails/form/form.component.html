@@ -1,3 +1,49 @@
-<p>
-  form works!
-</p>
+<div class="container-fluid">
+	<form [formGroup]="form">
+		<div class="form-row">
+			<div class="form-group col-md-6">
+				<label for="inputName4">Name</label>
+				<input type="text" class="form-control" id="inputName4" placeholder="Name" formControlName="name">
+			</div>
+			<div class="form-group col-md-6">
+				<label for="inputUsername4">Username</label>
+				<input type="text" class="form-control" id="inputUsername4" placeholder="Username" formControlName="username">
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="inputEmail">Email</label>
+			<input type="text" class="form-control" id="inputEmail" placeholder="leanne@hi.com" formControlName="email">
+		</div>
+		<div class="form-group">
+			<label for="inputAddress">Address</label>
+			<input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" formControlName="address">
+		</div>
+		<div class="form-group">
+			<label for="inputStreet">Street</label>
+			<input type="text" class="form-control" id="inputStreet" placeholder="Apartment, studio, or floor" formControlName="street" formControlName="street">
+		</div>
+		<div class="form-row">
+			<div class="form-group col-md-6">
+				<label for="inputSuite">Suite</label>
+				<input type="text" class="form-control" id="inputSuite" formControlName="suite">
+			</div>
+			<div class="form-group col-md-4">
+				<label for="inputCity">City</label>
+				<input type="text" class="form-control" id="inputCity" formControlName="city">
+			</div>
+			<div class="form-group col-md-2">
+				<label for="inputZipcode">Zipcode</label>
+				<input type="text" class="form-control" id="inputZipcode" formControlName="zipcode">
+			</div>
+			<div class="form-group col-md-2">
+				<label for="inputZipcode">Phone</label>
+				<input type="text" class="form-control" id="inputPhone" formControlName="phone">
+			</div>
+			<div class="form-group col-md-2">
+				<label for="inputZipcode">Website</label>
+				<input type="text" class="form-control" id="inputWebsite" formControlName="website">
+			</div>
+		</div>
+		<button type="submit" class="btn btn-primary">Get Data</button>
+	</form>
+</div>
