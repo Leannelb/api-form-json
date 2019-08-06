@@ -1,3 +1,4 @@
+import { UsersModule } from './../../partials/users/users.module';
 import { HomeComponent } from './home.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -17,7 +18,8 @@ const routes: Routes = [
     CommonModule,
     RouterModule.forChild(routes),
     FormModule,
-    NavModule
+	NavModule,
+	UsersModule
   ]
 })
 export class HomeModule { }
