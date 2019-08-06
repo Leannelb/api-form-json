@@ -10,11 +10,15 @@ import { Component, OnInit } from '@angular/core';
 export class UsersComponent implements OnInit {
 
 	public users:Array<UserModel>;
+	user:any;
+	obj:any;
+	myArrStr:any;
 
   constructor(private userService: UserService) { }
 
   ngOnInit() {
 	  this.getUsers();
+	  this.getUser(1);
   }
 
   getUsers(){
@@ -22,5 +26,11 @@ export class UsersComponent implements OnInit {
 	  console.log(this.users);
 	  return this.users;
   }
-
+  public getUser (id: number) {
+	this.userService.getUserByID(id).subscribe((response) => {
+      this.user = response;
+	  this.myArrStr = JSON.stringify(this.user);
+	  console.log(JSON.parse(this.myArrStr));
+    })
+  }
 }

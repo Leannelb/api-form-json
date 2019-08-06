@@ -17,7 +17,6 @@ export class UserService {
 
 	public getUsers() {
 		this.test = this.httpClient.get<UserModel[]>(this.URL);
-		console.log(this.test);
 		return this.test;
 	}
 
