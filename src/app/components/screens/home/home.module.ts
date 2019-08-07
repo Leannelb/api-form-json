@@ -1,3 +1,4 @@
+import { Form2Module } from './../../partails/form2/form2.module';
 import { DropdownModule } from './../../partails/dropdown/dropdown.module';
 import { UsersModule } from './../../partials/users/users.module';
 import { HomeComponent } from './home.component';
@@ -22,7 +23,8 @@ const routes: Routes = [
     FormModule,
 	NavModule,
 	UsersModule,
-	DropdownModule
+	DropdownModule,
+	Form2Module
   ]
 })
 export class HomeModule { }
