@@ -1,3 +1,4 @@
+import { FormGroup, FormControl } from '@angular/forms';
 import { UserModel } from './../../../models/users';
 import { UserService } from './../../../services/user.service';
 import { Component, OnInit } from '@angular/core';
@@ -13,12 +14,14 @@ export class UsersComponent implements OnInit {
 	user:any;
 	obj:any;
 	myArrStr:any;
+	searchForm: FormGroup;
 
   constructor(private userService: UserService) { }
 
   ngOnInit() {
 	  this.getUsers();
 	  this.getUser(1);
+	this.initForm();
   }
 
   getUsers(){
@@ -32,5 +35,13 @@ export class UsersComponent implements OnInit {
 	  this.myArrStr = JSON.stringify(this.user);
 	  console.log(JSON.parse(this.myArrStr));
     })
+  }
+  initForm(){
+	  this.searchForm = new FormGroup ({
+		  search: new FormControl('')
+	  })
+  }
+  public onSearchFormSubmit(){
+
   }
 }

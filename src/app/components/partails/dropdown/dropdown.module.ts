@@ -1,18 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { UsersComponent } from './users.component';
+import { DropdownComponent } from './dropdown.component';
 import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [
-	  UsersComponent
-	],
+  declarations: [DropdownComponent],
   imports: [
 	CommonModule,
 	ReactiveFormsModule
-  ],
-  exports: [
-	  UsersComponent
+  ], 
+  exports:[
+	  DropdownComponent
   ]
 })
-export class UsersModule { }
+export class DropdownModule { }

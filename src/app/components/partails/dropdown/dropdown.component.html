@@ -1,0 +1,54 @@
+<!-- <div class="jumbotron text-center">
+	<h1 class="display-5">
+		Radio Buttons in Angular
+	</h1>
+</div> -->
+
+<div class="container">
+	<div class="row custom-wrapper">
+		<div class="col-md-12">
+
+			<!-- Form starts -->
+			<form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+				<!-- Gender -->
+				<div class="group-gap">
+					<h5 class="mb-3">Gender</h5>
+					<div class="d-block my-3">
+
+						<div class="custom-control custom-radio">
+							<input id="male" type="radio" class="custom-control-input" value="male" name="gender" formControlName="gender">
+              <label class="custom-control-label" for="male">Male</label>
+            </div>
+
+            <div class="custom-control custom-radio">
+              <input id="female" type="radio" class="custom-control-input" value="female" name="gender" formControlName="gender">
+              <label class="custom-control-label" for="female">Female</label>
+            </div>
+
+            <div class="invalid-feedback" *ngIf="isSubmitted && myForm.errors?.required">
+              <p>Please select either value</p>
+            </div>
+          </div>
+        </div>
+
+          <!-- Submit Button -->
+          <button type="submit" class="btn btn-danger btn-lg btn-block">Submit</button>
+      </form><!-- Form ends -->
+
+    </div>
+  </div>
+</div>
+
+<!-- <form class="form-container" [formGroup]="customerForm">
+    <select formControlName="customer" (change)="onCustomerChanged($event)">
+        <option>(new customer)</option>
+        <option *ngFor="let customer of customers" [value]="customer.name">
+            {{customer.name}}
+        </option>
+    </select>
+    <select formControlName="order">
+        <option>(new order))</option>
+        <option *ngFor="let order of filteredOrders" [value]="order.id">
+            {{order.id}}</option>
+    </select>
+</form> -->

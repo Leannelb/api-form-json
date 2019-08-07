@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'form-partial',
@@ -14,7 +14,7 @@ export class FormComponent implements OnInit {
 
   ngOnInit() {
     this.form = new FormGroup ({
-      name: new FormControl(''),
+      name: new FormControl('', [Validators.required, Validators.minLength(1), Validators.maxLength(255)]),
       username: new FormControl(''),
       email:  new FormControl(''),
       address: new FormControl(''),
