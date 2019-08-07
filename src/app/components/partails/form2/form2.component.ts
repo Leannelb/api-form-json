@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
+import { FormArray } from '@angular/forms';
 
 @Component({
   selector: 'app-form2',
@@ -7,19 +8,31 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
   styleUrls: ['./form2.component.css']
 })
 export class Form2Component {
-	profileForm = new FormGroup({
-		firstName: new FormControl('', Validators.required),
-		lastName: new FormControl(''),
-		address: new FormGroup({
-		  street: new FormControl(''),
-		  city: new FormControl(''),
-		  state: new FormControl(''),
-		  zip: new FormControl('')
-		})
+	profileForm = this.fb.group({
+		firstName: ['', Validators.required],
+		lastName: [''],
+		address: this.fb.group({
+		  street: [''],
+		  city: [''],
+		  state: [''],
+		  zip: ['']
+		}),
+		aliases: this.fb.array([
+		  this.fb.control('')
+		])
 	  });
+	
+	  constructor(private fb: FormBuilder) { }
+	
 
 onSubmit() {
 	// TODO: Use EventEmitter with form value
 	console.warn(this.profileForm.value);
+  }
+  get aliases() {
+	return this.profileForm.get('aliases') as FormArray;
+  }
+  addAlias() {
+	this.aliases.push(this.fb.control(''));
   }
 }
